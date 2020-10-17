@@ -1,6 +1,7 @@
 body {
   background-color: #635263;
   color: #efefef;
+  font-size: 30px;
 }
 
 .score-container {
@@ -28,9 +29,6 @@ body {
   display: none;
 }
 
-#correct {
-  background: #494
-}
 
 #skip {
   background: #722;
@@ -48,4 +46,17 @@ body {
 .word {
   font-size: 30px;
   margin-bottom: 20px;
+}
+
+.time, .prev-score{
+  text-align: right;
+}
+
+.time {
+  color: #722;
+  font-size: 40px;
+}
+
+#correct, .start {
+  background: #494
 }
