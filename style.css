@@ -60,3 +60,15 @@ body {
 #correct, .start {
   background: #494
 }
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  display: none;
+  padding: 80px;
+}

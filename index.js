@@ -15,6 +15,15 @@ const startButton = document.querySelector(".start")
 const skip = document.querySelector("#skip")
 const timer = document.querySelector('.time')
 
+const model = (x) => {
+  const overlay = document.querySelector('.overlay')
+  overlay.innerHTML = x
+  overlay.style.display = 'block'
+  setTimeout(() => {
+    overlay.style.display = 'none'
+  }, 5000)
+}
+
 const next = () => {
   wordBox.innerHTML = newWord()
 }
@@ -52,6 +61,7 @@ const endGame = () => {
   startButton.style.display = 'block'
   correct.style.display = 'none'
   skip.style.display = 'none'
+  model(`your score is ${score}`)
 }
 
 const decrementTime = () => {
