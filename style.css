@@ -1,0 +1,51 @@
+body {
+  background-color: #635263;
+  color: #efefef;
+}
+
+.score-container {
+  float: left;
+}
+
+.prev-score-container {
+  float: right;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-around;
+}
+
+#correct, #skip {
+  display: none;
+}
+
+#correct {
+  background: #494
+}
+
+#skip {
+  background: #722;
+}
+
+.btn {
+  background: transparent;
+  color: #efefef;
+  width: 150px;
+  height: 100px;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.word {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
