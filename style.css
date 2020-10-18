@@ -10,7 +10,7 @@ body {
 }
 
 .word {
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .overlay {
@@ -23,4 +23,13 @@ body {
   background: #111;
   display: none;
   padding: 80px;
+}
+
+.time {
+  font-size: 60px;
+  color: #dc3545;
+}
+
+button {
+  font-size: 40px !important;
 }

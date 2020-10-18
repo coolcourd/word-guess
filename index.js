@@ -18,7 +18,7 @@ const timer = document.querySelector('.time')
 const model = (x) => {
   const overlay = document.querySelector('.overlay')
   overlay.innerHTML = x
-  overlay.style.display = 'block'
+  overlay.style.display = 'revert'
   setTimeout(() => {
     overlay.style.display = 'none'
   }, 5000)
@@ -32,7 +32,7 @@ const handleCorrect = () => {
   score++
   scoreBox.innerHTML = score
   next()
-  
+
 }
 
 const handleSkip = () => {
@@ -50,18 +50,25 @@ const startGame = () => {
   score = 0
   scoreBox.innerHTML = '0'
   startButton.style.display = 'none'
-  correct.style.display = 'block'
-  skip.style.display = 'block'
-  setTimeout(endGame, 60000)
+  correct.style.display = 'revert'
+  skip.style.display = 'revert'
   time = 60
   decrementTime()
 }
 
 const endGame = () => {
-  startButton.style.display = 'block'
+  startButton.style.display = 'revert'
   correct.style.display = 'none'
   skip.style.display = 'none'
-  model(`your score is ${score}`)
+  model(`
+  <div class='container-lg'>
+    <div class='row'>
+      <div class="col text-center" style="font-size: 50px">
+        Your score is ${score}!
+      </div>
+    </div>
+  </div>
+  `)
 }
 
 const decrementTime = () => {
@@ -70,9 +77,18 @@ const decrementTime = () => {
     timer.innerHTML = time
     if (time >= 0) {
       decrementTime()
+    } else {
+        timer.innerHTML = ''
+        endGame()
     }
   }, 1000)
 }
 
 startButton.addEventListener('click', startGame)
 
+//listen to shake event
+const shakeEvent = new Shake({threshold: 15});
+shakeEvent.start();
+window.addEventListener('shake', () => {
+    handleCorrect()
+}, false);
